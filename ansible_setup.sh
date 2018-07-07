@@ -13,3 +13,7 @@ systemctl restart sshd
 
 # let ansible sudo without a password
 echo "ansible ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# grab public keys
+mkdir /home/ansible/.ssh
+curl -s https://github.com/oneilsh.keys >> /home/ansible/.ssh/authorized_keys
